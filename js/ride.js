@@ -61,7 +61,7 @@ let map;
               
         fetch(`https://api.weatherapi.com/v1/current.json?key=6d16edaf51604ac791721821222911&q=${dest.latitude},${dest.longitude}&aqi=no`)
         .then((response) => response.json())
-        .then((data) => console.log(current.condition.text));
+        .then((data) => console.log(data[0].current.condition.text));
 
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.ColorBackground);

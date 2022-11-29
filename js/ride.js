@@ -59,7 +59,7 @@ let map;
         // getWeather(pickupLocation, unicorn)
         //fetch(http://api.weatherapi.com/v1/current.json?key=6d16edaf51604ac791721821222911&q=48.8567,2.3509&aqi=no);
               
-        fetch('https://api.weatherapi.com/v1/current.json?key=6d16edaf51604ac791721821222911&q=${dest.latitude},${dest.longitude}&aqi=no')
+        fetch(`https://api.weatherapi.com/v1/current.json?key=6d16edaf51604ac791721821222911&q=${dest.latitude},${dest.longitude}&aqi=no`)
         .then((response) => response.json())
         .then((data) => console.log(data));
 

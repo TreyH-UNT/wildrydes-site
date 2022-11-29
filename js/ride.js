@@ -58,15 +58,15 @@ let map;
         //  get the local weather, find nearby restaurants, movies
         // getWeather(pickupLocation, unicorn)
         //fetch(http://api.weatherapi.com/v1/current.json?key=6d16edaf51604ac791721821222911&q=48.8567,2.3509&aqi=no);
-              
-        fetch(`https://api.weatherapi.com/v1/current.json?key=6d16edaf51604ac791721821222911&q=${dest.latitude},${dest.longitude}&aqi=no`)
-        .then((response) => response.json())
-        .then((data) => console.log(data.current.condition.text));
 
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.ColorBackground);
+            
+            fetch(`https://api.weatherapi.com/v1/current.json?key=6d16edaf51604ac791721821222911&q=${dest.latitude},${dest.longitude}&aqi=no`)
+            .then((response) => response.json())
+            .then((data) => displayUpdate('The weather is ' + data.current.condition.text + '!', '#ffc300'));
+            
             WildRydes.map.unsetLocation();
-            displayUpdate('The weather might be cold! Layer up!', '#ffc300');
 
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');

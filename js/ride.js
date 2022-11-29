@@ -176,7 +176,7 @@ let map;
 
 //  displayUpdate
 //      nice utility method to show message to user
-function displayUpdate(text, color) {
+function displayUpdate(text, color='green') {
     $('#updates').prepend($(`<li style="background-color:${color}">${text}</li>`));
 }
 

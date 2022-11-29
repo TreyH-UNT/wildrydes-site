@@ -60,7 +60,7 @@ let map;
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.Color);
             WildRydes.map.unsetLocation();
-            displayUpdate('The weather might be cold! Layer up!', unicorn.Color);
+            displayUpdate('The weather might be cold! Layer up!', '#ffc300');
 
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');
@@ -176,7 +176,7 @@ let map;
 
 //  displayUpdate
 //      nice utility method to show message to user
-function displayUpdate(text, color='green') {
+function displayUpdate(text, color) {
     $('#updates').prepend($(`<li style="background-color:${color}">${text}</li>`));
 }
 

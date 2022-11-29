@@ -60,6 +60,7 @@ let map;
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.Color);
             WildRydes.map.unsetLocation();
+            displayUpdate('The weather might be cold! Layer up!', unicorn.Color);
 
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');

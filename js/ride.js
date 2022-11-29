@@ -47,6 +47,7 @@ let map;
     function completeRequest(result, pickupLocation) {
         var unicorn;
         var pronoun;
+        var dest = WildRydes.map.selectedPoint;
 
         console.log('Response received from API: ', result);
         unicorn = result.Unicorn;
@@ -56,6 +57,11 @@ let map;
         console.log(pickupLocation);
         //  get the local weather, find nearby restaurants, movies
         // getWeather(pickupLocation, unicorn)
+        //fetch(http://api.weatherapi.com/v1/current.json?key=6d16edaf51604ac791721821222911&q=48.8567,2.3509&aqi=no);
+              
+        fetch('http://api.weatherapi.com/v1/current.json?key=6d16edaf51604ac791721821222911&q=${dest.latitude},${dest.longitude}&aqi=no')
+        .then((response) => response.json())
+        .then((data) => console.log(data));
 
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.ColorBackground);

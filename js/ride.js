@@ -51,14 +51,14 @@ let map;
         console.log('Response received from API: ', result);
         unicorn = result.Unicorn;
         pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.', unicorn.Color);
+        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.', unicorn.ColorBackground);
 
         console.log(pickupLocation);
         //  get the local weather, find nearby restaurants, movies
         // getWeather(pickupLocation, unicorn)
 
         animateArrival(function animateCallback() {
-            displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.Color);
+            displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.ColorBackground);
             WildRydes.map.unsetLocation();
             displayUpdate('The weather might be cold! Layer up!', '#ffc300');
 

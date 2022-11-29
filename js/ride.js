@@ -64,7 +64,7 @@ let map;
             
             fetch(`https://api.weatherapi.com/v1/current.json?key=6d16edaf51604ac791721821222911&q=${dest.latitude},${dest.longitude}&aqi=no`)
             .then((response) => response.json())
-            .then((data) => displayUpdate('The weather is ' + data.current.condition.text + '!', '#ffc300'));
+            .then((data) => displayUpdate('The weather is ' + data.current.condition.text + ' in ' + data.location.name + ", " + data.location.region + '!', '#ffc300'));
             
             WildRydes.map.unsetLocation();
 
